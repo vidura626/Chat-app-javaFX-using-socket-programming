@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="clientContext" prefHeight="610.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientFormController01">
+    <children>
+        <Label layoutX="31.0" layoutY="23.0" prefHeight="33.0" prefWidth="124.0" text="CHAT ROOM">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblChatingName" layoutX="576.0" layoutY="31.0" prefHeight="33.0" prefWidth="178.0" text="     ">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtMessage" layoutX="80.0" layoutY="501.0" prefHeight="52.0" prefWidth="447.0" />
+        <Button fx:id="btnSend" layoutX="606.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="52.0" prefWidth="152.0" style="-fx-background-color: blue; -fx-background-radius: 20;" text="Send" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="imgCamera" fitHeight="41.0" fitWidth="40.0" layoutX="538.0" layoutY="507.0" onMouseClicked="#imagebtnClickOnMouse" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assestes/camera.png" />
+            </image>
+        </ImageView>
+      <Button alignment="CENTER" layoutX="21.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#imghappyMoodOnMouseClick" style="-fx-background-color: Transparent;">
+         <graphic>
+              <ImageView fx:id="imghappyMood" fitHeight="33.0" fitWidth="32.0" onMouseClicked="#imghappyMoodOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@../assestes/hppy.png" />
+                  </image>
+              </ImageView>
+         </graphic>
+      </Button>
+      <ScrollPane layoutX="31.0" layoutY="74.0" prefHeight="360.0" prefWidth="714.0">
+         <content>
+            <VBox fx:id="vBox" minHeight="357.0" minWidth="709.0" style="-fx-padding: 10px;" />
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="imgScroll" layoutX="455.0" layoutY="290.0" prefHeight="200.0" prefWidth="206.0">
+         <content>
+            <VBox alignment="CENTER" minHeight="196.0" minWidth="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="selectedImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#btnSendImgOnAction" style="-fx-background-color: blue;" text="Send" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane prefHeight="31.0" prefWidth="18.0" />
+                        <Button mnemonicParsing="false" onAction="#btnCloseSendImgOnAction" style="-fx-background-color: red;" text="Close" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="imojiScroll" layoutX="31.0" layoutY="290.0" prefHeight="200.0" prefWidth="317.0">
+         <content>
+            <VBox fx:id="imojiVboxContainer" minHeight="196.0" minWidth="314.0" />
+         </content>
+      </ScrollPane>
+    </children>
+</AnchorPane>
